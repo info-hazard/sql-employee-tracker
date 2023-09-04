@@ -35,3 +35,32 @@ const questions = [
     ],
   },
 ];
+
+function initializePrompt() {
+  inquier
+    .prompt(questions)
+    .then((response) => {
+      if (response.action === 'View All Employees') {
+        viewEmployees();
+      } else if (response.action === 'View All Roles') {
+        viewRoles();
+      } else if (response.action === 'View All Departments') {
+        viewDepartments();
+      } else if (response.action === 'Add Employee') {
+        addEmployee();
+      } else if (response.action === 'Add Role') {
+        addRole();
+      } else if (response.action === 'Add Department') {
+        addDepartment();
+      } else if (response.action === 'Update Role for Employee') {
+        updateEmployeerole();
+      } else if (response.action === 'QUIT') {
+        process.exit();
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
+initializePrompt()
