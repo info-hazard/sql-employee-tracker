@@ -37,7 +37,7 @@ const questions = [
 ];
 
 function initializePrompt() {
-  inquier
+  inquirer
     .prompt(questions)
     .then((response) => {
       if (response.action === 'View All Employees') {
@@ -62,5 +62,27 @@ function initializePrompt() {
       console.error(err);
     });
 }
+
+function viewEmployees() {
+  connection.query('SELECT * FROM employee', function (error, data) {
+    console.table(data);
+    startPrompt();
+  });
+}
+//function to view all roles
+function viewRoles() {
+  connection.query('SELECT * FROM role', function (error, data) {
+    console.table(data);
+    startPrompt();
+  });
+}
+//function to view departments
+function viewDepartments() {
+  connection.query('SELECT * FROM Department', function (error, data) {
+    console.table(data);
+    startPrompt();
+  });
+}
+
 
 initializePrompt()
