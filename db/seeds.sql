@@ -1,7 +1,6 @@
 INSERT INTO department (name)
 VALUES  ("Engineering"),
         ("Finance"),
-        ("Interconnected"),
         ("Sales"),
         ("Legal");
 
@@ -11,24 +10,21 @@ VALUES  ("Lead Engineer", 120000, 1),
         ("Junior Engineer", 80000, 1),
         ("Finance Lead", 85000, 2),
         ("Junior Accountant", 70000, 2),
-        ("Brand Advocate Manager", 95000, 3),
-        ("Brand Advocate Sr. Analyst", 82000, 3),
-        ("Brand Advocate Analyst", 70000, 3),
-        ("Sales Manager", 75000, 4),
-        ("Salesperson", 65000, 4),
-        ("Legal Advisor", 110000, 5),
-        ("Lawyer", 95000, 5);
+        ("Sales Manager", 75000, 3),
+        ("Salesperson", 65000, 3),
+        ("Legal Advisor", 110000, 4),
+        ("Lawyer", 95000, 4);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES  ("Sam", "Say",  1, NULL),
-        ("Erin", "Min",  2, 1),
-        ("Julia", "Love",  3, 1), 
+        ("Erin", "Min",  2, NULL),
+        ("Julia", "Love",  3, NULL), 
         ("Amir", "Shawn",  4, NULL), 
-        ("John", "Doe",  5, 4),
-        ("Preston", "Scott",  6, NULL), 
-        ("Peter", "Ferris",  7, 6), 
-        ("Falkor", "Nest",  8, 6), 
-        ("Sammy", "Scott",  9, NULL), 
-        ("Stevie", "Wong",  10, 9), 
-        ("Lilia", "Nahshi",  11, NULL), 
-        ("Killian", "McPherson",  12, 11);
+        ("John", "Doe",  2, NULL),
+        ("Preston", "Scott",  1, NULL), 
+        ("Peter", "Ferris",  4, NULL), 
+        ("Falkor", "Nest",  4, NULL), 
+        ("Sammy", "Scott",  3, NULL), 
+        ("Stevie", "Wong",  1, NULL), 
+        ("Lilia", "Nahshi",  2, NULL), 
+        ("Killian", "McPherson",  1, NULL);

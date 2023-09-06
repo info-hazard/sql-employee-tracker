@@ -2,26 +2,17 @@
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
 
-// encryption for db access
-require("dotenv").config();
-
-// .env variables
-const dbUser = process.env.DB_USER;
-const dbPassword = process.env.DB_PASSWORD;
-const dbName = process.env.DB_NAME;
-
-// creating sql connection
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: dbUser,
-  password: dbPassword,
-  database: dbName,
+  host: 'localhost',
+  user: 'root',
+  password: 'Zqqj&W*4',
+  database: 'employee_db',
 });
 
 const questions = [
   {
     type: 'list',
-    name: 'questions',
+    name: 'action',
     message: 'What would you like to do?',
     choices: [
       'View All Employees',
@@ -78,7 +69,7 @@ function viewRoles() {
 }
 
 function viewDepartments() {
-  connection.query('SELECT * FROM Department', function (error, data) {
+  connection.query('SELECT * FROM department', function (error, data) {
     console.table(data);
     initializePrompt();
   });
@@ -189,7 +180,7 @@ inquirer
   ])
   .then(function (res) {
     connection.query(
-      'INSERT into Department (name) values(?)',
+      'INSERT into department (name) values(?)',
       [res.name],
       function (error, data) {
         console.table(data);
@@ -226,4 +217,4 @@ inquirer
   });
 }
 
-initializePrompt()
+initializePrompt();
